@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Chromoscope - View the Universe in different wavelengths</title>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="http://www.chromoscope.net/favicon.ico" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!--[if IE 6]><link rel="stylesheet" href="style-ie.css" type="text/css" /><![endif]-->
+	<script src="jquery-1.7.1.min.js"></script>
+	<script src="jquery.mousewheel.min.js"></script>
+	<script src="chromoscope.js"></script>
+	<script src="chromoscope-lookup.js"></script>
+	<script src="chromoscope-kml.js"></script>
+	<script src="chromoscope-contextmenu.js"></script>
+	<script type="text/javascript" src="ui/jquery.ui.core.min.js"></script>
+	<script type="text/javascript" src="ui/jquery.ui.widget.min.js"></script>
+	<script type="text/javascript" src="ui/jquery.ui.mouse.min.js"></script>
+	<script type="text/javascript" src="ui/jquery.ui.sortable.min.js"></script>
+	<script type="text/javascript">
+	<!--
+
+		$(document).ready(function(){
+
+			// Set up the Chromoscope
+			chromo = $.chromoscope({showshare:false,showabout:false});
+
+			// The spectral bands should be in order
+			chromo.addWavelength({key:'v',useasdefault:true,name:'optical',tiles:{z:'DSS2-tiles/',z3:'photopic/',z4:'photopic/'},ext:'jpg',title:'optical',attribution:{z:'<a href="http://stdatu.stsci.edu/dss/">DSS2<\/a>\/<a href="http://www.wikisky.org/">Wikisky<\/a>',z3:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org<\/a>',z4:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org<\/a>'}});
+			chromo.addWavelength({key:'c',useasdefault:false,name:'rgb',tiles:'rgb_map_hp-tiles/',ext:'jpg',title:'RGB',attribution:'Three-color RGB Composite'});
+			chromo.addWavelength({key:'w',useasdefault:false,name:'white',tiles:'white/',ext:'jpg',title:'White',attribution:'170-231MHz'})
+			chromo.addWavelength({key:'b',useasdefault:false,name:'blue',tiles:'blue/',ext:'jpg',title:'Blue',attribution:'139-170MHz'})
+			chromo.addWavelength({key:'g',useasdefault:false,name:'green',tiles:'green/',ext:'jpg',title:'Green',attribution:'103-134MHz'})
+			chromo.addWavelength({key:'r',useasdefault:false,name:'red',tiles:'red/',ext:'jpg',title:'Red',attribution:'72-103MHz'})
+			chromo.addWavelength({key:'h',useasdefault:false,name:'haslam',tiles:'Radio_vsmoothed-tiles/',ext:'jpg',title:'Haslam',attribution:'<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">408MHz (Haslam et al.)<\/a>'});
+//			chromo.addWavelength({key:'r',useasdefault:false,name:'radio',tiles:'../../../healpix_test/red_map_hp-tiles/',ext:'jpg',title:'radio',attribution:'<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">GLEAM: Hurley-Walker et al.<\/a>'});
+// NB: Right-click to search in GLEAM VO
+
+
+			// Annotation layers will be shown at all wavelengths
+			chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'labels',tiles:'labelsnew/',ext:'jpg',title:'Labels',attribution:'some Labels from Chris'});
+
+			// Load the map
+			chromo.load();
+
+			//g = chromo.addPinGroup({id:"mypins",title:"My custom pins"});
+			//chromo.addPin({group:g,img:"pin.png",title:"My pin",desc:"This is a description",ra:275,dec:-38});
+
+		});
+
+	// --></script>
+	<style>
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: Arial, sans-serif;
+		background-color: black;
+	}
+	a { color: #6666ff; }
+	</style>
+
+</head>
+<body>
+
+	<div class="chromo_title">
+		<h1><a href="#">Chromoscope</a></h1>
+		<h2 class="chromo_version"></h2>
+	</div>
+
+	<div class="chromo_message">
+		<p>Ever wanted X-ray specs or super-human vision? Chromoscope lets you explore our Galaxy (the Milky Way) and the distant Universe in <a href="http://blog.chromoscope.net/data/">a range of wavelengths</a> from X-rays to the longest radio waves.<br /><br />Change the wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse. For more information we have <a href="#" onClick="javascript:showVideoTour();">a quick video tour</a> or you can read <a href="http://blog.chromoscope.net/about/">more on our blog</a>. If you get stuck, click &quot;Help&quot; in the bottom left.<br /><br /><a href="http://www.astro.cardiff.ac.uk/research/instr/"><img src="cardiffuni.png" style="border:0px;margin: 0px 5px 5px 0px;float:left;" /></a>Chromoscope is kindly funded by the Cardiff University <a href="http://www.astro.cardiff.ac.uk/research/egalactic/">Astronomy</a> and <a href="http://www.astro.cardiff.ac.uk/research/instr/">Astronomy Instrumentation</a> Groups.</p>
+	</div>
+
+</body>
+</html>
