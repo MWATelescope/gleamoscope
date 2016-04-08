@@ -59,10 +59,10 @@ jQuery.query = function() {
 	// Declare the Chromoscope object
 	function Chromoscope(input){
 
-		this.version = "1.4.3";
+		this.version = "1.0";
 
 		this.q = $.query();
-		this.zoom = -1;
+		this.zoom = 4;
 		this.maxZoom = 6;		// Maximum zoom level
 		this.wavelength_speed = 0.05;	// Alters the speed of wavelength transitions
 		this.wavelength_load_range = 1;	// The number of wavelengths either side of nominal to load simultaneously
@@ -263,7 +263,8 @@ jQuery.query = function() {
 		this.nozoomin = (inp.nozoomin) ? inp.nozoomin : 'Can\'t zoom in any more'
 		this.nozoomout = (inp.nozoomout) ? inp.nozoomout : 'Can\'t zoom out any more'
 		this.url = (inp.url) ? inp.url : 'The URL for this view is:';
-		this.intro = (inp.intro) ? inp.intro : "Ever wanted X-ray specs or super-human vision? Chromoscope lets you explore our Galaxy (the Milky Way) and the distant Universe in <a href=\"http://blog.chromoscope.net/data/\">a range of wavelengths</a> from gamma-rays to the longest radio waves.<br /><br />Change the wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse. For more information we have <a href=\"#\" class=\"videolink\">a quick video tour</a> or you can read <a href=\"http://blog.chromoscope.net/about/\">more on our blog</a>. If you get stuck, click \"Help\" in the bottom left.<br /><br /><a href=\"http://www.astro.cardiff.ac.uk/research/instr/\"><img src=\"cardiffuni.png\" style=\"border:0px;margin: 0px 5px 5px 0px;float:left;\" /></a>Chromoscope is kindly funded by the Cardiff University <a href=\"http://www.astro.cardiff.ac.uk/research/egalactic/\">Astronomy</a> and <a href=\"http://www.astro.cardiff.ac.uk/research/instr/\">Astronomy Instrumentation</a> Groups.<br style=\"clear:both;\" />";
+//		this.intro = (inp.intro) ? inp.intro : "Ever wanted X-ray specs or super-human vision? Chromoscope lets you explore our Galaxy (the Milky Way) and the distant Universe in <a href=\"http://blog.chromoscope.net/data/\">a range of wavelengths</a> from gamma-rays to the longest radio waves.<br /><br />Change the wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse. For more information we have <a href=\"#\" class=\"videolink\">a quick video tour</a> or you can read <a href=\"http://blog.chromoscope.net/about/\">more on our blog</a>. If you get stuck, click \"Help\" in the bottom left.<br /><br /><a href=\"http://www.astro.cardiff.ac.uk/research/instr/\"><img src=\"cardiffuni.png\" style=\"border:0px;margin: 0px 5px 5px 0px;float:left;\" /></a>Chromoscope is kindly funded by the Cardiff University <a href=\"http://www.astro.cardiff.ac.uk/research/egalactic/\">Astronomy</a> and <a href=\"http://www.astro.cardiff.ac.uk/research/instr/\">Astronomy Instrumentation</a> Groups.<br style=\"clear:both;\" />";
+        this.intro = (inp.intro) ? inp.intro : "GLEAM is the new all-sky survey from the <a href=\"http://www.mwatelescope.org\">Murchison Widefield Array</a> telescope in Western Australia.<br /> Based on <a href=\"http://www.chromoscope.net\">Chromoscope</a>, GLEAMoscope lets you explore our Galaxy (the Milky Way) and the distant Universe in <a href=\"http://blog.chromoscope.net/data/\">a range of wavelengths</a> from X-rays to down to the GLEAM frequencies of 72-231 MHz.  <br /> <br />Change the wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse.  <br /> For more information on Chromoscope, check out the <a href=\"http://blog.chromoscope.net/about/\">Chromoscope blog</a>. If you get stuck, click &quot;Help&quot; in the bottom left.<br /><br /><a href=\"http://www.astro.cardiff.ac.uk/research/instr/\"><img src=\"cardiffuni.png\" style=\"border:0px;margin: 0px 5px 5px 0px;float:left;\" /></a>Chromoscope is kindly funded by the Cardiff University <a href=\"http://www.astro.cardiff.ac.uk/research/egalactic/\">Astronomy</a> and <a href=\"http://www.astro.cardiff.ac.uk/research/instr/\">Astronomy Instrumentation</a> Groups.</p>" ;
 		this.gal = (inp.gal) ? inp.gal : 'http://en.wikipedia.org/wiki/Galactic_coordinate_system';
 		this.galcoord = (inp.galcoord) ? inp.galcoord : 'Galactic Coordinates';
 		this.eq = (inp.eq) ? inp.eq : 'http://en.wikipedia.org/wiki/Equatorial_coordinate_system';

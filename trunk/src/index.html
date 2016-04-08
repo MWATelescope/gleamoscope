@@ -23,12 +23,17 @@
 			chromo = $.chromoscope({showshare:false,showabout:false});
 
 			// The spectral bands should be in order
-			chromo.addWavelength({key:'v',useasdefault:true,name:'optical',tiles:{z:'DSS2-tiles/',z3:'photopic/',z4:'photopic/'},ext:'jpg',title:'optical',attribution:{z:'<a href="http://stdatu.stsci.edu/dss/">DSS2<\/a>\/<a href="http://www.wikisky.org/">Wikisky<\/a>',z3:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org<\/a>',z4:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org<\/a>'}});
-			chromo.addWavelength({key:'c',useasdefault:false,name:'rgb',tiles:'rgb_map_hp-tiles/',ext:'jpg',title:'RGB',attribution:'Three-color RGB Composite'});
-			chromo.addWavelength({key:'w',useasdefault:false,name:'white',tiles:'white/',ext:'jpg',title:'White',attribution:'170-231MHz'})
-			chromo.addWavelength({key:'b',useasdefault:false,name:'blue',tiles:'blue/',ext:'jpg',title:'Blue',attribution:'139-170MHz'})
-			chromo.addWavelength({key:'g',useasdefault:false,name:'green',tiles:'green/',ext:'jpg',title:'Green',attribution:'103-134MHz'})
-			chromo.addWavelength({key:'r',useasdefault:false,name:'red',tiles:'red/',ext:'jpg',title:'Red',attribution:'72-103MHz'})
+            chromo.addWavelength({key:'g',useasdefault:false,name:'gamma',tiles:'fermi_3yr-tiles/',ext:'jpg',title:'gamma',attribution:'<a href="http://fermi.gsfc.nasa.gov/">Fermi<\/a>'})
+            chromo.addWavelength({key:'x',useasdefault:false,name:'xray',tiles:'RASS-tiles/',ext:'jpg',title:'xray',attribution:'<a href="http://www.mpe.mpg.de/xray/wave/rosat/index.php">ROSAT<\/a>'});
+            chromo.addWavelength({key:'v',useasdefault:true,name:'optical',tiles:{z:'DSS2-tiles/',z3:'photopic/',z4:'photopic/'},ext:'jpg',title:'optical',attribution:{z:'<a href="http://stdatu.stsci.edu/dss/">DSS2<\/a>\/<a href="http://www.wikisky.org/">Wikisky<\/a>',z3:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org<\/a>',z4:'Nick Risinger, <a href="http://skysurvey.org/">skysurvey.org<\/a>'}});
+//            chromo.addWavelength({key:'a',useasdefault:false,name:'halpha',tiles:'H-alpha-tiles/',ext:'jpg',title:'halpha',attribution:'<a href="http://www.astro.wisc.edu/wham/">WHAM<\/a>/<a href="http://www.phys.vt.edu/~halpha/">VTSS<\/a>/<a href="http://amundsen.swarthmore.edu/">SHASSA<\/a>/<a href="http://www.cfa.harvard.edu/~dfinkbei/">Finkbeiner<\/a>'});
+            chromo.addWavelength({key:'f',useasdefault:false,name:'farir',tiles:'IRAS-tiles/',ext:'jpg',title:'farir',attribution:'<a href="http://irsa.ipac.caltech.edu/IRASdocs/iras.html">IRAS<\/a>/NASA'});
+            chromo.addWavelength({key:'m',useasdefault:false,name:'microwave',tiles:'Planck-tiles/',ext:'jpg',title:'microwave',attribution:'<a href="http://www.esa.int/esaCP/SEMF2FRZ5BG_index_0.html">ESA Planck<\/a> LFI and HFI Consortia (2010)'});
+			chromo.addWavelength({key:'r',useasdefault:false,name:'rgb',tiles:'rgb_map_hp-tiles/',ext:'jpg',title:'GLEAM',attribution:'<a href="http://www.mwatelescope.org">GLEAM: 72-231MHz</a>'});
+//			chromo.addWavelength({key:'w',useasdefault:false,name:'white',tiles:'white/',ext:'jpg',title:'White',attribution:'170-231MHz'})
+//			chromo.addWavelength({key:'b',useasdefault:false,name:'blue',tiles:'blue/',ext:'jpg',title:'Blue',attribution:'139-170MHz'})
+//			chromo.addWavelength({key:'g',useasdefault:false,name:'green',tiles:'green/',ext:'jpg',title:'Green',attribution:'103-134MHz'})
+//			chromo.addWavelength({key:'r',useasdefault:false,name:'red',tiles:'red/',ext:'jpg',title:'Red',attribution:'72-103MHz'})
 			chromo.addWavelength({key:'h',useasdefault:false,name:'haslam',tiles:'Radio_vsmoothed-tiles/',ext:'jpg',title:'Haslam',attribution:'<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">408MHz (Haslam et al.)<\/a>'});
 //			chromo.addWavelength({key:'r',useasdefault:false,name:'radio',tiles:'../../../healpix_test/red_map_hp-tiles/',ext:'jpg',title:'radio',attribution:'<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">GLEAM: Hurley-Walker et al.<\/a>'});
 // NB: Right-click to search in GLEAM VO
@@ -66,7 +71,13 @@
 	</div>
 
 	<div class="chromo_message">
-		<p>Ever wanted X-ray specs or super-human vision? Chromoscope lets you explore our Galaxy (the Milky Way) and the distant Universe in <a href="http://blog.chromoscope.net/data/">a range of wavelengths</a> from X-rays to the longest radio waves.<br /><br />Change the wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse. For more information we have <a href="#" onClick="javascript:showVideoTour();">a quick video tour</a> or you can read <a href="http://blog.chromoscope.net/about/">more on our blog</a>. If you get stuck, click &quot;Help&quot; in the bottom left.<br /><br /><a href="http://www.astro.cardiff.ac.uk/research/instr/"><img src="cardiffuni.png" style="border:0px;margin: 0px 5px 5px 0px;float:left;" /></a>Chromoscope is kindly funded by the Cardiff University <a href="http://www.astro.cardiff.ac.uk/research/egalactic/">Astronomy</a> and <a href="http://www.astro.cardiff.ac.uk/research/instr/">Astronomy Instrumentation</a> Groups.</p>
+		<p>
+GLEAM is the new all-sky survey from the <a href="http://www.mwatelescope.org">Murchison Widefield Array</a> telescope in Western Australia.<br />
+Based on <a href="http://www.chromoscope.net">Chromoscope</a>, GLEAMoscope lets you explore our Galaxy (the Milky Way) and the distant Universe in <a href="http://blog.chromoscope.net/data/">a range of wavelengths</a> from X-rays to down to the GLEAM frequencies of 72-231 MHz.
+<br />
+<br />Change the wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse.
+<br />
+For more information on Chromoscope, check out the <a href="http://blog.chromoscope.net/about/">Chromoscope blog</a>. If you get stuck, click &quot;Help&quot; in the bottom left.<br /><br /><a href="http://www.astro.cardiff.ac.uk/research/instr/"><img src="cardiffuni.png" style="border:0px;margin: 0px 5px 5px 0px;float:left;" /></a>Chromoscope is kindly funded by the Cardiff University <a href="http://www.astro.cardiff.ac.uk/research/egalactic/">Astronomy</a> and <a href="http://www.astro.cardiff.ac.uk/research/instr/">Astronomy Instrumentation</a> Groups.</p>
 	</div>
 
 </body>
